@@ -4,8 +4,8 @@ import 'package:firemaintenance/exceptions/authentication/bad_credentials_except
 import 'package:firemaintenance/exceptions/http/server_connection_exception.dart';
 import 'package:firemaintenance/http/http_request.dart';
 import 'package:firemaintenance/http/http_response.dart';
-import 'package:firemaintenance/service/authentication_service/login_user_request_data.dart';
-import 'package:firemaintenance/service/authentication_service/token_retriever/token_retriever.dart';
+import 'package:firemaintenance/service/authentication/login_user_request_data.dart';
+import 'package:firemaintenance/service/authentication/token_retriever/token_retriever.dart';
 
 class LoginTokenRetriever{
   late final TokenRetriever _tokenRetriever;

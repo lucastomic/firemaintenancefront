@@ -2,10 +2,10 @@ import 'package:firemaintenance/domain/user/user.dart';
 import 'package:firemaintenance/http/http_request.dart';
 import 'package:firemaintenance/http/http_requester.dart';
 import 'package:firemaintenance/image_manage/image_uploader/image_uploader_port.dart';
-import 'package:firemaintenance/service/authentication_service/create_user_request_data.dart';
-import 'package:firemaintenance/service/authentication_service/login_user_request_data.dart';
-import 'package:firemaintenance/service/authentication_service/port/authentication_service.dart';
-import 'package:firemaintenance/service/authentication_service/token_retriever/login_token_retriever.dart';
+import 'package:firemaintenance/service/authentication/create_user_request_data.dart';
+import 'package:firemaintenance/service/authentication/login_user_request_data.dart';
+import 'package:firemaintenance/service/authentication/port/authentication_service.dart';
+import 'package:firemaintenance/service/authentication/token_retriever/login_token_retriever.dart';
 import 'package:injectable/injectable.dart';
 
 import 'token_retriever/register_token_retriever.dart';

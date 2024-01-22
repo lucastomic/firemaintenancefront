@@ -1,8 +1,8 @@
 import 'package:firemaintenance/http/http_requester.dart';
 import 'package:firemaintenance/image_manage/image_uploader/image_uploader_port.dart';
-import 'package:firemaintenance/service/authentication_service/authentication_service.dart';
-import 'package:firemaintenance/service/authentication_service/create_user_request_data.dart';
-import 'package:firemaintenance/service/authentication_service/token_retriever/register_token_retriever.dart';
+import 'package:firemaintenance/service/authentication/authentication_service.dart';
+import 'package:firemaintenance/service/authentication/create_user_request_data.dart';
+import 'package:firemaintenance/service/authentication/token_retriever/register_token_retriever.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

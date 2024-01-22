@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
-import '../../service/internet_service/internet_service.dart';
+import '../../service/internet/internet_service.dart';
 
 class ImageConversorFromNetwork {
   static Future<Uint8List> parse(String url) async {

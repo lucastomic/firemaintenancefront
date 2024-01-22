@@ -3,7 +3,7 @@ import 'package:firemaintenance/exceptions/authentication/bad_credentials_except
 import 'package:firemaintenance/exceptions/http/server_connection_exception.dart';
 import 'package:firemaintenance/http/http_request.dart';
 import 'package:firemaintenance/http/http_response.dart';
-import 'package:firemaintenance/service/authentication_service/create_user_request_data.dart';
+import 'package:firemaintenance/service/authentication/create_user_request_data.dart';
 
 import 'token_retriever.dart';
 

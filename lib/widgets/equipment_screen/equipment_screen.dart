@@ -21,14 +21,16 @@ class _EquipmentScreenState extends State<EquipmentScreen> {
       body: CustomScrollView(
         slivers: [
           EquipmentAppBar(widget._equipment),  
-          _SubTitle("Mantenimiento"),
+          const _SubTitle("Mantenimiento"),
+          const _SubTitle("Mantenimiento"),
           SliverToBoxAdapter(
             child: SizedBox(
               height:300,
               child: FutureMaintenanceList(widget._maintentanceService.getFrom(widget._equipment))
             )
           ),
-          SliverToBoxAdapter(child: DecoratedButton.hollow(
+          SliverToBoxAdapter(child: 
+            DecoratedButton.hollow(
               context: context, 
               text: "Dar mantenimiento",
               onPressed: _maintainEquipment,
@@ -47,7 +49,7 @@ class _EquipmentScreenState extends State<EquipmentScreen> {
 
 class _SubTitle extends StatelessWidget {
   final String _text;
-  _SubTitle(this._text);
+  const _SubTitle(this._text);
 
   @override
   Widget build(BuildContext context) {
