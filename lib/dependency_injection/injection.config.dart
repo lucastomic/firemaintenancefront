@@ -22,8 +22,7 @@ import '../image_manage/image_uploader/image_uploader_port.dart' as _i11;
 import '../local_storage/local_storage.dart' as _i6;
 import '../local_storage/local_storage_port.dart' as _i5;
 import '../service/authentication/authentication_service.dart' as _i17;
-import '../service/authentication/port/authentication_service.dart'
-    as _i16;
+import '../service/authentication/port/authentication_service.dart' as _i16;
 import '../service/equipment/equipment_service.dart' as _i3;
 import '../service/equipment/equipment_service_impl.dart' as _i4;
 import '../service/maintenance/maintenanceServiceImpl.dart' as _i15;
