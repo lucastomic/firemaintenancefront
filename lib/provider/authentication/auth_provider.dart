@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:firemaintenance/http/http_requester.dart';
-import 'package:firemaintenance/service/authentication_service/create_user_request_data.dart';
-import 'package:firemaintenance/service/authentication_service/port/authentication_service.dart';
+import 'package:firemaintenance/service/authentication/create_user_request_data.dart';
+import 'package:firemaintenance/service/authentication/port/authentication_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/user/user.dart';
 import '../../local_storage/local_storage_port.dart';
-import '../../service/authentication_service/login_user_request_data.dart';
+import '../../service/authentication/login_user_request_data.dart';
 
 class AuthenticationProvider extends ChangeNotifier {
   User? _authenticatedUser;

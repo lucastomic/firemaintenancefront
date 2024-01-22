@@ -8,9 +8,9 @@ import 'dart:async' as _i3;
 import 'package:firemaintenance/http/http_requester.dart' as _i4;
 import 'package:firemaintenance/image_manage/image_uploader/image_uploader_port.dart'
     as _i2;
-import 'package:firemaintenance/service/authentication_service/create_user_request_data.dart'
+import 'package:firemaintenance/service/authentication/create_user_request_data.dart'
     as _i6;
-import 'package:firemaintenance/service/authentication_service/token_retriever/register_token_retriever.dart'
+import 'package:firemaintenance/service/authentication/token_retriever/register_token_retriever.dart'
     as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 

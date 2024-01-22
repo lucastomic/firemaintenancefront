@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/authentication/auth_provider.dart';
-import '../../../service/authentication_service/create_user_request_data.dart';
+import '../../../service/authentication/create_user_request_data.dart';
 import '../../forms/custom_form.dart';
 
 class RegisterForm extends StatefulWidget {

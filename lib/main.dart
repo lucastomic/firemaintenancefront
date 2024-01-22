@@ -1,6 +1,6 @@
 import 'package:firemaintenance/local_storage/local_storage_port.dart';
 import 'package:firemaintenance/provider/authentication/auth_provider.dart';
-import 'package:firemaintenance/service/authentication_service/port/authentication_service.dart';
+import 'package:firemaintenance/service/authentication/port/authentication_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
