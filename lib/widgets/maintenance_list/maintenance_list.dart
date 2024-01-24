@@ -18,13 +18,17 @@ class FutureMaintenanceList extends StatelessWidget {
         }
         return ListView.builder(
           itemCount: snapshot.data.length,
-          reverse: true,
           itemBuilder: (context, index){
-            return MaintenanceBox(snapshot.data[index]);
+            int indexStartingFromLast = _getIndexStartingFromLast(index, snapshot.data.length);
+            return MaintenanceBox(snapshot.data[indexStartingFromLast]);
           },
         );
       },
     );
+  }
+
+  int _getIndexStartingFromLast(int index, int size){
+    return size - 1 - index;
   }
 }
 

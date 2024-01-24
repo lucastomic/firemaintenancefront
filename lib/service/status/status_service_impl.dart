@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:convert';
 
 import 'package:firemaintenance/domain/equipment/equipment.dart';
@@ -5,13 +6,15 @@ import 'package:firemaintenance/domain/status/status.dart';
 import 'package:firemaintenance/http/http_request.dart';
 import 'package:firemaintenance/http/http_requester.dart';
 import 'package:firemaintenance/service/status/status_service.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../http/http_response.dart';
 
+@Injectable(as:StatusService)
 class StatusServiceImpl implements StatusService{
   @override
   Future<void> create(Equipment equipment, StatusType status) async {
-    HTTPRequest req = HTTPRequest.toServer(unencodedPath: "/api/v1/equipment/${equipment.id}/status",body: {"status":status.toString()});
+    HTTPRequest req = HTTPRequest.toServer(unencodedPath: "/api/v1/equipment/${equipment.id}/status",body: {"status":status.name});
     await HTTPRequester.post(req);
   }
 
@@ -27,8 +30,8 @@ class StatusServiceImpl implements StatusService{
   Future<Status> getLastOne(Equipment equipment) async {
     HTTPRequest req = HTTPRequest.toServer(unencodedPath: "/api/v1/equipment/${equipment.id}/lastStatus",);
     HTTPResponse res = await HTTPRequester.get(req);
-    Map<String,dynamic> decoded = jsonDecode(res.body["message"]);
-    return Status.fromJson(decoded);
+    return Status.fromJson(res.body);
+
   }
 
   List<Status> _parseStatusList(List<dynamic> json){

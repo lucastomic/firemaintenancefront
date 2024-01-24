@@ -9,8 +9,8 @@ import 'package:injectable/injectable.dart';
 
 import '../../http/http_response.dart';
 
-@Injectable(as:MaintentanceService)
-class MaintenanceServiceImpl implements MaintentanceService{
+@Injectable(as:MaintenanceService)
+class MaintenanceServiceImpl implements MaintenanceService{
   @override
   Future<List<Maintenance>> getDoneByAuthenticated() async{
     HTTPRequest req = HTTPRequest.toServer(unencodedPath: "/api/v1/maintenances",);

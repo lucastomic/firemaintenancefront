@@ -3,6 +3,7 @@ import 'package:firemaintenance/image_manage/image_quality_reducer/image_quality
 import 'package:firemaintenance/service/equipment/equipment_service.dart';
 import 'package:firemaintenance/service/maintenance/maintentanceService.dart';
 import 'package:firemaintenance/service/profile_photo/profile_photo_service_port.dart';
+import 'package:firemaintenance/service/status/status_service.dart';
 import 'package:firemaintenance/widgets/router_screen/equipment_list_screen/equipment_list_screen.dart';
 import 'package:firemaintenance/widgets/router_screen/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -16,11 +17,13 @@ class RouterScreen extends StatefulWidget {
   final ImagePickerPort _imagePicker;
   final IProfilePhotoService _photoService; 
   final EquipmentService _equipmentService;
-  final MaintentanceService _maintentanceService;
+  final StatusService _statusService;
+  final MaintenanceService _maintentanceService;
   const RouterScreen(
     this._maintentanceService,
     this._qualityReducer, 
     this._imagePicker,
+    this._statusService,
     this._photoService,
     this._equipmentService
   );
@@ -62,7 +65,7 @@ class _RouterScreenState extends State<RouterScreen> {
 
   void _initDisplayOptions(){
     _displayOptions = [
-      EquipmentListScreen(widget._equipmentService, widget._qualityReducer, widget._maintentanceService),
+      EquipmentListScreen(widget._equipmentService, widget._qualityReducer, widget._maintentanceService, widget._statusService),
       ProfileScreen(widget._imagePicker,widget._photoService, widget._maintentanceService)
     ];
   }

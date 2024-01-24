@@ -21,25 +21,27 @@ import '../image_manage/image_uploader/cloudinary_image_uploader.dart' as _i12;
 import '../image_manage/image_uploader/image_uploader_port.dart' as _i11;
 import '../local_storage/local_storage.dart' as _i6;
 import '../local_storage/local_storage_port.dart' as _i5;
-import '../service/authentication/authentication_service.dart' as _i17;
-import '../service/authentication/port/authentication_service.dart' as _i16;
+import '../service/authentication/authentication_service.dart' as _i19;
+import '../service/authentication/port/authentication_service.dart' as _i18;
 import '../service/equipment/equipment_service.dart' as _i3;
 import '../service/equipment/equipment_service_impl.dart' as _i4;
 import '../service/maintenance/maintenanceServiceImpl.dart' as _i15;
 import '../service/maintenance/maintentanceService.dart' as _i14;
-import '../service/profile_photo/profile_photo_service.dart' as _i21;
-import '../service/profile_photo/profile_photo_service_port.dart' as _i20;
+import '../service/profile_photo/profile_photo_service.dart' as _i23;
+import '../service/profile_photo/profile_photo_service_port.dart' as _i22;
+import '../service/status/status_service.dart' as _i16;
+import '../service/status/status_service_impl.dart' as _i17;
 import '../widgets/authentication_screen/authentication_forms/input_factory/login_input_factory.dart'
-    as _i19;
+    as _i21;
 import '../widgets/authentication_screen/authentication_forms/input_factory/ports/login_input_factory_port.dart'
-    as _i18;
+    as _i20;
 import '../widgets/authentication_screen/authentication_forms/input_factory/ports/register_input_factory_port.dart'
-    as _i22;
+    as _i24;
 import '../widgets/authentication_screen/authentication_forms/input_factory/register_input_factory.dart'
-    as _i23;
+    as _i25;
 import '../widgets/authentication_screen/authentication_forms/input_factory/validator/input_validator.dart'
     as _i13;
-import '../widgets/router_screen/router_screen.dart' as _i24;
+import '../widgets/router_screen/router_screen.dart' as _i26;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -60,22 +62,24 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i10.CloudinaryImageQualityReducer());
     gh.factory<_i11.ImageUploader>(() => _i12.CloudinaryImageUploader());
     gh.factory<_i13.InputValidator>(() => _i13.InputValidator());
-    gh.factory<_i14.MaintentanceService>(() => _i15.MaintenanceServiceImpl());
-    gh.factory<_i16.IAuthenticationService>(
-        () => _i17.AuthenticationService(gh<_i11.ImageUploader>()));
-    gh.factory<_i18.ILoginInputFactory>(
-        () => _i19.LoginInputFactory(gh<_i13.InputValidator>()));
-    gh.factory<_i20.IProfilePhotoService>(
-        () => _i21.ProfilePhotoService(gh<_i11.ImageUploader>()));
-    gh.factory<_i22.IRegisterInputFactory>(() => _i23.RegisterInputFactory(
+    gh.factory<_i14.MaintenanceService>(() => _i15.MaintenanceServiceImpl());
+    gh.factory<_i16.StatusService>(() => _i17.StatusServiceImpl());
+    gh.factory<_i18.IAuthenticationService>(
+        () => _i19.AuthenticationService(gh<_i11.ImageUploader>()));
+    gh.factory<_i20.ILoginInputFactory>(
+        () => _i21.LoginInputFactory(gh<_i13.InputValidator>()));
+    gh.factory<_i22.IProfilePhotoService>(
+        () => _i23.ProfilePhotoService(gh<_i11.ImageUploader>()));
+    gh.factory<_i24.IRegisterInputFactory>(() => _i25.RegisterInputFactory(
           gh<_i13.InputValidator>(),
           gh<_i7.ImagePickerPort>(),
         ));
-    gh.factory<_i24.RouterScreen>(() => _i24.RouterScreen(
-          gh<_i14.MaintentanceService>(),
+    gh.factory<_i26.RouterScreen>(() => _i26.RouterScreen(
+          gh<_i14.MaintenanceService>(),
           gh<_i9.ImageQualityReducer>(),
           gh<_i7.ImagePickerPort>(),
-          gh<_i20.IProfilePhotoService>(),
+          gh<_i16.StatusService>(),
+          gh<_i22.IProfilePhotoService>(),
           gh<_i3.EquipmentService>(),
         ));
     return this;

@@ -16,7 +16,7 @@ import 'package:provider/provider.dart';
 class ProfileScreen extends StatelessWidget {
   final ImagePickerPort _imagePickerPort;
   final IProfilePhotoService _photoService;
-  final MaintentanceService _maintentanceService;
+  final MaintenanceService _maintentanceService;
   ProfileScreen(this._imagePickerPort,this._photoService, this._maintentanceService);
 
   late User user;
