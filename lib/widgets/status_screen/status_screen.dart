@@ -46,16 +46,19 @@ class _StatusesList extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
         itemCount: _statuses.length,
         itemBuilder: (BuildContext context, int index) { 
+          int i = _getIndexStartingFromLast(index, _statuses.length);
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: StatusBox(_statuses[index]),
+            child: StatusBox(_statuses[i]),
           );
         },
       ),
     );
+  }
+  int _getIndexStartingFromLast(int index, int size){
+    return size - 1 - index;
   }
 }
 

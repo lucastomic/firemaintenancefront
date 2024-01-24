@@ -29,7 +29,7 @@ class MaintenanceServiceImpl implements MaintenanceService{
 
   @override
   Future<void> maintain(Equipment equipment) async  {
-    HTTPRequest req = HTTPRequest.toServer(unencodedPath: "/api/v1/maintenance/${equipment.id}",);
+    HTTPRequest req = HTTPRequest.toServer(unencodedPath: "/api/v1/equipment/${equipment.id}/maintenance",);
     await HTTPRequester.post(req);
   }
 

@@ -59,7 +59,13 @@ class HTTPRequester {
   }
 
   Future<http.Response> _makePOSTRequest()async {
-    return await http.post(_requestCodedIntoURI,headers: _request.headers, body: _request.body).timeout(_defaultTimeOut);
+    try{
+    
+      return await http.post(_requestCodedIntoURI,headers: _request.headers, body: _request.body).timeout(_defaultTimeOut);
+    }catch(e){
+    
+  print(e);
+rethrow;}
   }
 
   Future<http.Response> _makeDELETERequest()async {
